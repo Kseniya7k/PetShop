@@ -1,0 +1,53 @@
+@import '../../styles/base.less';
+
+.animal {
+  padding: 10px;
+  margin: 20px;
+  border: 5px @color-text double;
+}
+.animal-name {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+.animal-name p,
+.animal-name img {
+  cursor: pointer;
+}
+.animal-description p {
+  font-size: 30px;
+  text-align: left;
+  padding-left: 10px;
+  padding-right: 10px;
+  padding-bottom: 15px;
+  font-style: italic;
+}
+.edit {
+  width: 25px;
+  height: 25px;
+  border: #FFFFFF solid 2px;
+  border-radius: 8px;
+  padding: 4px;
+  margin-top: 8px;
+  margin-left: 8px;
+}
+.delete {
+  width: 25px;
+  height: 25px;
+  border: @border-btn-color solid 2px;
+  border-radius: 8px;
+  padding: 4px;
+  margin-top: 8px;
+  margin-left: 8px;
+}
+span {
+  padding: 10px;
+}
+.button {
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-end;
+}
+.animal-name p {
+  font-size: 40px;
+}

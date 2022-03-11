@@ -1,0 +1,20 @@
+<div class="animal">
+  <div class="headers">
+    <p (click)="onClick()">{{ animal.type }} {{ animal.name }}</p>
+    <div class="button">
+      <span><img class="edit" alt="img edit" src="assets/img/edit.png" (click)="_editAnimal()"/></span>
+      <span><img class="delete" alt="img delete" src="assets/img/delete.png" (click)="_deleteAnimal()"/></span>
+    </div>
+  </div>
+  <div class="animal-description">
+    <p *ngIf="active">
+      Пол животного: {{ animal.sex }}.<br>
+      Окраска: {{ animal.color }}.<br>
+      Возраст: {{ animal.age }} год.<br>
+      Уникальные способности: {{ animal.uniqueAbilities}}.
+    </p>
+  </div>
+</div>
+
+
+

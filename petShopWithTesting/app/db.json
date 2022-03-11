@@ -1,0 +1,74 @@
+{
+  "animals": [
+    {
+      "name": "Хедвик",
+      "id": 3,
+      "type": "Сова",
+      "sex": "м",
+      "color": "серый",
+      "age": 1,
+      "family": "Birds",
+      "uniqueAbilities": "доставлять почту"
+    },
+    {
+      "name": "Фоукс",
+      "id": 4,
+      "type": "Феникс",
+      "sex": "м",
+      "color": "оранжевый",
+      "age": 101,
+      "family": "Birds",
+      "uniqueAbilities": "исцелять слезами"
+    },
+    {
+      "name": "Симба",
+      "id": 5,
+      "type": "Лев",
+      "sex": "м",
+      "color": "жёлтый",
+      "age": 1,
+      "family": "Cats",
+      "uniqueAbilities": "честность"
+    },
+    {
+      "name": "Гав",
+      "id": 6,
+      "type": "Котёнок",
+      "sex": "м",
+      "color": "песочный",
+      "age": 1,
+      "family": "Cats",
+      "uniqueAbilities": "искать неприятности"
+    },
+    {
+      "id": 7,
+      "name": "Симон",
+      "type": "Кот",
+      "sex": "м",
+      "color": "серо-белый",
+      "family": "Cats",
+      "uniqueAbilities": "кушать и гулять",
+      "age": 1
+    },
+    {
+      "name": "Дружок",
+      "type": "Пёс",
+      "age": 1,
+      "sex": "м",
+      "color": "чёрный",
+      "family": "Dogs",
+      "uniqueAbilities": "бегать за кошкой",
+      "id": 9
+    },
+    {
+      "name": "Муся",
+      "type": "Кошка",
+      "age": "1",
+      "sex": "ж",
+      "color": "белая",
+      "family": "Cats",
+      "uniqueAbilities": "кушать",
+      "id": 10
+    }
+  ]
+}

@@ -1,0 +1,128 @@
+<h1 *ngIf="_animal">Режим редактирования животного: {{ _animal.type }} {{_animal.name}}</h1>
+
+<form
+  novalidate
+  *ngIf="_animal"
+  #form="ngForm"
+  (ngSubmit)="_onSubmit(form)">
+
+  <div class="edit-animal-form__flex">
+    <label>Name:</label>
+    <input
+      name="name"
+      #name="ngModel"
+      [(ngModel)]="_animal.name"
+      required
+      minlength="3"
+      maxlength="10"/>
+    <ng-template
+      *ngIf="name.touched"
+      [ngTemplateOutlet]="errors"
+      [ngTemplateOutletContext]="{ errors: name.errors }">
+    </ng-template>
+  </div>
+  <div class="edit-animal-form__flex">
+    <label>Type:</label>
+    <input
+      name="type"
+      #type="ngModel"
+      [(ngModel)]="_animal.type"
+      minlength="3"
+      maxlength="10"
+      required/>
+    <ng-template
+      *ngIf="type.touched"
+      [ngTemplateOutlet]="errors"
+      [ngTemplateOutletContext]="{ errors: type.errors }">
+    </ng-template>
+  </div>
+  <div class="edit-animal-form__flex-radio">
+    <label class="edit-animal-form__control">Sex:</label>
+    <div class="radio-btn">
+      <input
+        type="radio"
+        [(ngModel)]="_animal.sex"
+        name="sex"
+        value="м"/>
+      <label>м</label>
+    </div>
+    <div class="radio-btn">
+      <input
+        type="radio"
+        [(ngModel)]="_animal.sex"
+        name="sex"
+        value="ж"/>
+      <label>ж</label>
+    </div>
+  </div>
+  <div class="edit-animal-form__flex">
+    <label>Color:</label>
+    <input
+      name="color"
+      #color="ngModel"
+      [(ngModel)]="_animal.color"
+      minlength="3"
+      maxlength="30"
+      required/>
+    <ng-template
+      *ngIf="color.touched"
+      [ngTemplateOutlet]="errors"
+      [ngTemplateOutletContext]="{ errors: color.errors }">
+    </ng-template>
+  </div>
+  <div class="edit-animal-form__flex">
+    <label>Family:</label>
+    <input
+      name="family"
+      #family="ngModel"
+      [(ngModel)]="_animal.family"
+      minlength="4"
+      maxlength="10"
+      required/>
+    <ng-template
+      *ngIf="family.touched"
+      [ngTemplateOutlet]="errors"
+      [ngTemplateOutletContext]="{ errors: family.errors }">
+    </ng-template>
+  </div>
+  <div class="edit-animal-form__flex">
+    <label>Age:</label>
+    <input
+      name="age"
+      #age="ngModel"
+      [(ngModel)]="_animal.age"
+      minlength="1"
+      maxlength="3"
+      required/>
+    <ng-template
+      *ngIf="age?.touched"
+      [ngTemplateOutlet]="errors"
+      [ngTemplateOutletContext]="{ errors: age?.errors }">
+    </ng-template>
+  </div>
+  <div class="edit-animal-form__flex">
+    <label>Unique abilities:</label>
+    <input
+      name="uniqueAbilities"
+      #uniqueAbilities="ngModel"
+      [(ngModel)]="_animal.uniqueAbilities"
+      minlength="5"
+      maxlength="30"
+      required/>
+    <ng-template
+      *ngIf="uniqueAbilities.touched"
+      [ngTemplateOutlet]="errors"
+      [ngTemplateOutletContext]="{ errors: uniqueAbilities.errors }">
+    </ng-template>
+  </div>
+  <div class="edit-animal-form__button">
+    <button type="submit" [disabled]="!form.form.valid">Update</button>
+  </div>
+</form>
+
+<ng-template #errors let-errors="errors">
+  <div class="edit-animal-form__error" *ngIf="errors?.required">Field is required</div>
+  <div class="edit-animal-form__error" *ngIf="errors?.minlength">
+    Must be at least {{ errors.minlength.requiredLength }} characters long.
+  </div>
+</ng-template>

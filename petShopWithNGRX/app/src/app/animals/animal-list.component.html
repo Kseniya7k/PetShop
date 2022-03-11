@@ -1,0 +1,14 @@
+<h2>Эти животные ждут своего хозяина:</h2>
+<div class="container">
+  <ul class="list-animals">
+    <li *ngFor="let animal of _animals | async">
+      <animal-card
+                 [animal]="animal"
+                 [active]="_activeId === animal.id"
+                 (onAnimalSelect)="activeAnimal($event)"
+                 (getAll)="getAll()"></animal-card>
+    </li>
+  </ul>
+</div>
+<button (click)="addAnimal()" class="btn add-animal">Добавить животное</button>
+<button (click)="toggleCatsVisibility()" class="btn hide-cats">{{ isCatsShown ? "Скрыть" : "Показать" }} котиков</button>

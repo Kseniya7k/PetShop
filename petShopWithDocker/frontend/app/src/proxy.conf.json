@@ -1,0 +1,6 @@
+{
+  "/animals": {
+    "target": "*",
+    "secure": false
+  }
+}

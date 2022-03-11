@@ -1,0 +1,76 @@
+@import '../styles/base.less';
+
+h1 {
+  text-align: center;
+  font-size: 50px;
+  margin-top: 10px;
+  margin-bottom: 30px;
+}
+form {
+  padding-right: 470px;
+  padding-left: 470px;
+}
+input.ng-invalid.ng-touched {
+  border: 2px solid @border-color !important;
+}
+.add-animal-form__flex {
+  display: flex;
+  flex-wrap: wrap;
+}
+.add-animal-form__flex {
+  input {
+    width: 250px;
+    padding: 5px;
+    margin-bottom: 30px;
+  }
+
+  label {
+    font-size: 20px;
+    width: 150px;
+    text-align: right;
+    float: left;
+    margin-right: 30px;
+  }
+}
+.radio-btn {
+  display: inline-block;
+
+  label {
+    margin-right: 15px;
+    margin-bottom: 30px;
+    font-size: 20px;
+    text-align: right;
+  }
+
+  input {
+    margin-bottom: 30px;
+    margin-right: 5px;
+    cursor: pointer;
+  }
+}
+.add-animal-form__flex-radio {
+  display: flex;
+  flex-wrap: wrap;
+
+  .add-animal-form__control {
+    font-size: 20px;
+    width: 150px;
+    text-align: right;
+    float: left;
+    margin-right: 30px;
+  }
+}
+.add-animal-form__button {
+  button {
+    margin-left: 250px;
+    padding: 15px;
+    border-radius: 15px;
+    background: @background-btn;
+    font-size: 17px;
+  }
+}
+.edit-animal-form__error {
+  color: @border-color;
+  font-size: 20px;
+  padding-left: 10px;
+}

@@ -1,0 +1,106 @@
+<h1>Режим создания животного:</h1>
+
+<form
+  [formGroup]="_formGroup"
+  (ngSubmit)="_onSubmit()">
+  <div class="add-animal-form__flex">
+    <label>Name:</label>
+    <input
+      formControlName="name"
+      required
+      minlength="2"
+    />
+    <ng-template
+      *ngIf="name?.touched"
+      [ngTemplateOutlet]="errors"
+      [ngTemplateOutletContext]="{ errors: name?.errors }">
+    </ng-template>
+  </div>
+  <div class="add-animal-form__flex">
+    <label>Type:</label>
+    <input formControlName="type"
+           minlength="2"
+           required/>
+    <ng-template
+      *ngIf="type?.touched"
+      [ngTemplateOutlet]="errors"
+      [ngTemplateOutletContext]="{ errors: type?.errors }">
+    </ng-template>
+  </div>
+  <div class="add-animal-form__flex-radio">
+    <label class="add-animal-form__control">Sex:</label>
+    <div class="radio-btn">
+      <input
+        type="radio"
+        formControlName="sex"
+        name="sex"
+        value="м"/>
+      <label>м</label>
+    </div>
+    <div class="radio-btn">
+      <input
+        type="radio"
+        formControlName="sex"
+        name="sex"
+        value="ж"/>
+      <label>ж</label>
+    </div>
+  </div>
+  <div class="add-animal-form__flex">
+    <label>Color:</label>
+    <input
+      formControlName="color"
+      maxlength="20"
+      required/>
+    <ng-template
+      *ngIf="color?.touched"
+      [ngTemplateOutlet]="errors"
+      [ngTemplateOutletContext]="{ errors: color?.errors }">
+    </ng-template>
+  </div>
+  <div class="add-animal-form__flex">
+    <label>Family:</label>
+    <input formControlName="family"
+           required/>
+    <ng-template
+      *ngIf="family?.touched"
+      [ngTemplateOutlet]="errors"
+      [ngTemplateOutletContext]="{ errors: family?.errors }">
+    </ng-template>
+  </div>
+  <div class="add-animal-form__flex">
+    <label>Age:</label>
+    <input
+      formControlName="age"
+      minlength="1"
+      maxlength="3"
+      required/>
+    <ng-template
+      *ngIf="age?.touched"
+      [ngTemplateOutlet]="errors"
+      [ngTemplateOutletContext]="{ errors: age?.errors }">
+    </ng-template>
+  </div>
+  <div class="add-animal-form__flex">
+    <label>Unique abilities:</label>
+    <input
+      formControlName="uniqueAbilities"
+      maxlength="30"
+      required/>
+    <ng-template
+      *ngIf="uniqueAbilities?.touched"
+      [ngTemplateOutlet]="errors"
+      [ngTemplateOutletContext]="{ errors: uniqueAbilities?.errors }">
+    </ng-template>
+  </div>
+  <div class="add-animal-form__button">
+    <button type="submit">Create animal</button>
+  </div>
+</form>
+
+<ng-template #errors let-errors="errors">
+  <div class="edit-animal-form__error" *ngIf="errors?.required">Field is required</div>
+  <div class="edit-animal-form__error" *ngIf="errors?.minlength">
+    Must be at least {{ errors.minlength.requiredLength }} characters long.
+  </div>
+</ng-template>
